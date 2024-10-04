@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-1-B</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Сколько дней в месяце?</h1>
+      <label for="year" class="label">Введите год</label>
+      <input type="number" name="year" id="year" min="0" class="input" />
+      <label for="month" class="label">Введите номер месяца</label>
+      <input
+        type="number"
+        name="month"
+        id="month"
+        min="1"
+        max="12"
+        class="input"
+      />
+      <button type="submit" id="button" class="button">Рассчитать</button>
+      <p id="summary" class="p-element"></p>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>

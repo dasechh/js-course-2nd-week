@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task-1-C</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Сегодня играем в бадминтон?</h1>
+      <label for="day" class="label">День недели: </label>
+      <select name="day" id="day" class="select">
+        <option value="monday">Понедельник</option>
+        <option value="tuesday">Вторник</option>
+        <option value="wednesday">Среда</option>
+        <option value="thursday">Четверг</option>
+        <option value="friday">пятница</option>
+        <option value="saturday">Суббота</option>
+        <option value="sunday">Воскресенье</option>
+      </select>
+      <label for="temp" class="label">Температура: </label>
+      <select name="temp" id="temp" class="select">
+        <option value="hot">Жарко</option>
+        <option value="warm">Тепло</option>
+        <option value="cold">Холодно</option>
+      </select>
+      <label for="precipitation" id="label">Осадки: </label>
+      <select name="precipitation" id="precipitation" class="select">
+        <option value="clear">Ясно</option>
+        <option value="cloudy">Облачно</option>
+        <option value="rain">Дождь</option>
+        <option value="snow">Снег</option>
+        <option value="hail">Град</option>
+      </select>
+      <label for="wind" class="label">Ветер: </label>
+      <select name="wind" id="wind" class="select">
+        <option value="windy">Есть</option>
+        <option value="non-windy">Нет</option>
+      </select>
+      <label for="humidity" class="label">Влажность: </label>
+      <select name="humidity" id="humidity" class="select">
+        <option value="humi-high">Высокая</option>
+        <option value="humi-low">Низкая</option>
+      </select>
+      <button type="submit" id="submit" class="button">Решить!</button>
+      <p id="summary" class="p-epement"></p>
+    </main>
+    <script src="js/main.js"></script>
+  </body>
+</html>
