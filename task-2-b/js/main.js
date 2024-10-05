@@ -1,29 +1,28 @@
 const main = () => {
   let number = parseFloat(document.getElementById("number").value);
   let summary = document.getElementById("summary");
-  return (summary.innerHTML = `Простые числа из вашего числа: ${calculate(
+  return (summary.innerHTML = `Простые числа из вашего числа: ${PrimeNumbers(
     number
   )}`);
 };
 
-const calculate = (number) => {
-  let sieve = new Array(number + 1).fill(true);
-  sieve[0] = sieve[1] = false;
-  for (let num = 2; num * num <= number; num++) {
-    if (sieve[num]) {
-      for (let multiple = num * num; multiple <= number; multiple += num) {
-        sieve[multiple] = false;
+const PrimeNumbers = (number) => {
+  let primes = "";
+  for (let num = 2; num <= number; num++) {
+    let isPrime = true;
+    let divisor = 2;
+    while (divisor * divisor <= num) {
+      if (num % divisor === 0) {
+        isPrime = false;
+        break;
       }
+      divisor++;
+    }
+    if (isPrime) {
+      primes += num + " ";
     }
   }
-
-  let primes = [];
-  for (let i = 2; i <= number; i++) {
-    if (sieve[i]) {
-      primes.push(i);
-    }
-  }
-  return primes;
+  return primes.trim();
 };
 
 document.getElementById("submit").addEventListener("click", main);

@@ -1,21 +1,22 @@
 const main = () => {
   let pElement = document.getElementById("summary");
   let month = parseInt(document.getElementById("month").value);
+  let year = parseInt(document.getElementById("year").value);
   return (pElement.innerHTML = `Количество дней в этом месяце: ${MonthLength(
-    month
+    month,
+    year
   )}`);
 };
 
-const isLeap = () => {
-  let year = parseInt(document.getElementById("year").value);
+const isLeap = (year) => {
   if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) {
     return true;
   }
   return false;
 };
 
-const MonthLength = (month) => {
-  if (month == 2 && isLeap()) {
+const monthLength = (month, year) => {
+  if (month == 2 && isLeap(year)) {
     return 29;
   } else {
     switch (month) {

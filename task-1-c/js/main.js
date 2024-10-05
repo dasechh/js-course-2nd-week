@@ -4,11 +4,11 @@ const main = () => {
   let precipitation = document.getElementById("precipitation").value;
   let wind = document.getElementById("wind").value;
   let humidity = document.getElementById("humidity").value;
-  return decision(day, temp, precipitation, wind, humidity);
+  let summary = document.getElementById("summary");
+  return summary.innerHTML = decision(day, temp, precipitation, wind, humidity);
 };
 
 const decision = (day, temp, precipitation, wind, humidity) => {
-  let summary = document.getElementById("summary");
   if (
     day != "sunday" ||
     temp != "warm" ||
@@ -18,9 +18,9 @@ const decision = (day, temp, precipitation, wind, humidity) => {
     wind == "windy" ||
     humidity == "humi-high"
   ) {
-    return (summary.innerHTML = "Сегодня не играем");
+    return "Нет";
   } else {
-    return (summary.innerHTML = "Сегодня играем!");
+    return "Да";
   }
 };
 document.getElementById("submit").addEventListener("click", main);

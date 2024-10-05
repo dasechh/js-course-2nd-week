@@ -6,11 +6,11 @@ const main = () => {
       "Пожалуйста, введите корректный массив чисел.";
     return;
   }
-  let median = calculate(numberArray);
+  let median = findMedian(numberArray);
   document.getElementById("result").textContent = `Медиана: ${median}`;
 };
 
-const calculate = (array) => {
+const findMedian = (array) => {
   array.sort((a, b) => a - b); // Сортируем массив
   const mid = Math.floor(array.length / 2);
   if (array.length % 2 === 0) {
